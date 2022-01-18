@@ -1,0 +1,48 @@
+.loading{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(0,0,0,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge{
+  margin: 2px;
+  font-size: 1.2rem;
+}
+.carousel{
+  height: 280px;
+}
+.carousel .carousel-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.carousel .carousel-item img {
+  width: 150px;
+}
+.carousel .carousel-item h2{
+  padding: 2px 0;
+}
+label{
+  color: #ffffff;
+  font-size: 150%;
+}
+
+.switch{
+  font-size: 2.2rem;
+  padding: 35px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moneda{
+  font-size: 1.7rem;
+}
+
+

@@ -1,0 +1,53 @@
+<div *ngIf="cargando" class="loading">
+  <img src="../../../assets/loading.gif" alt="cargando" width="120px" height="120px">
+</div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="colg-lg-4">
+      <div class="form-group browser-default">
+        <label for="cantidad" class="form-label browser-default">Amount:</label>
+        <input type="number" [(ngModel)]="cantidad" class="form-control form-control-lg browser-default" id="cantidad"
+          placeholder="Amount..." (input)="convertir()">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row pt-4 pb-4">
+  <div class="col-lg-5">
+    <div class="carousel center-align" (click)="convertir2()">
+      <div *ngFor="let moneda of monedas; let i = index" class="carousel-item">
+        <img src="{{ moneda.src }}" alt="" width="100px">
+        <h2>{{ moneda.nombre }}</h2>
+        <input type="hidden" name="index" value="{{i}}">
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2 switch" (click)="switchMonedas()">
+    <i class="fas fa-arrows-alt-h"></i>
+  </div>
+  <div class="col-lg-5">
+    <div class="carousel center-align" (click)="convertir2()">
+      <div *ngFor="let moneda of monedas; let i = index" class="carousel-item">
+        <img src="{{ moneda.src }}" alt="" width="100px">
+        <h2>{{ moneda.nombre }}</h2>
+        <input type="hidden" name="index" value="{{i}}">
+      </div>
+    </div>
+  </div>
+</div>
+<h5 class="mt-3 text-center">
+  <span class="btn btn-dark" (click)="convertir()">Convert</span>
+</h5>
+<div class="container mt-4">
+  <div *ngIf="total != 0" class="row text-center">
+    <div class="col-lg-5">
+      <h2>{{ cantidad }} {{ tengo }}</h2>
+    </div>
+    <div class="col-lg-2">
+      <h4>=</h4>
+    </div>
+    <div class="col-lg-5">
+      <h2>{{ total }} {{ quiero }}</h2>
+    </div>
+  </div>
+</div>
